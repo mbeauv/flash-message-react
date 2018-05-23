@@ -1,0 +1,63 @@
+{
+  "name": "flash-message-react",
+  "version": "1.0.0",
+  "description": "React componnent allowing display of flash messages provided by flash-message-redux.",
+  "main": "dist/index.js",
+  "scripts": {
+    "prebuild": "rimraf dist && mkdir dist",
+    "build": "babel src/ -d dist/ --copy-files --ignore __tests__",
+    "postbuild": "flow gen-flow-files ./src --out-dir ./dist",
+    "prepublish": "yarn run build",
+    "test": "node_modules/jest/bin/jest.js",
+    "testc": "node_modules/jest/bin/jest.js --coverage",
+    "testw": "node_modules/jest/bin/jest.js --watch",
+    "lint": "./node_modules/.bin/eslint src/"
+  },
+  "keywords": [
+    "flash",
+    "react",
+    "redux"
+  ],
+  "author": "mbeauv@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.1",
+    "babel-jest": "^22.1.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "eslint": "^4.15.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jest": "^21.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.5.1",
+    "flash-message-redux": "^1.0.0",
+    "flow-bin": "^0.64.0",
+    "jest": "^22.4.3",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.7",
+    "redux": "^3.7.2",
+    "redux-mock-store": "^1.5.1",
+    "rimraf": "^2.6.2",
+    "styled-components": "^3.2.6",
+    "polished": "^1.9.2",
+    "react-fontawesome": "^1.6.1"
+  },
+  "peerDependencies": {
+    "flash-message-redux": "^1.0.0",
+    "styled-components": "^3.2.6",
+    "react": "^16.2.0",
+    "react-redux": "^5.0.7",
+    "redux": "^3.7.2",
+    "react-dom": "^16.2.0",
+    "polished": "^1.9.2",
+    "react-fontawesome": "^1.6.1"
+  }
+}

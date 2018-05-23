@@ -1,0 +1,28 @@
+env:
+  global:
+    - CC_TEST_REPORTER_ID=977be978d6bead53c1681f05e0613db10910b17e1063cb63e7ab7b8ef5bd77ed
+
+language: node_js
+
+node_js:
+  - "8"
+  - "stable"
+
+sudo: false
+
+before_script:
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+
+before_install:
+  - npm install -g flow-bin@0.70.0
+
+script:
+  - npm run lint
+  - npm run testc
+
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
