@@ -1,5 +1,7 @@
 # flash-message-react
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/30b532acb3f84c2708b5/maintainability)](https://codeclimate.com/github/mbeauv/flash-message-react/maintainability)
+
 Companion library to flash-message-redux.  While flash-message-redux is all about putting transient messages in your redux store,
 flash-message-react is about displaying it on the screen. This is akin to a toast message or a flash message in the Rails world.
 
